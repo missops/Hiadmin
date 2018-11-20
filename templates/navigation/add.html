@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+{% block log %}{{ title }}{% endblock %}
+
+<!-- **********************************************************************************************************************************************************
+    MAIN CONTENT
+    *********************************************************************************************************************************************************** -->
+<!--main content start-->
+{% block mainbody %}
+    <section class="content  wrapper site-min-height">
+
+        <!-- Default box -->
+        <div class="box">
+            <div class="box-header with-border">
+                <h4 class="mb"><i class="fa fa-angle-right"></i> 添加导航条目</h4>
+
+            </div>
+
+            <div class="box-body">
+                <form action="{% url 'navi_add' %}" method="post">
+                    {% csrf_token %}
+                    {{ n_form.as_p }}
+                    <input type="submit" class="btn btn-clear-g" style="width: 60pt" value="提交">&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="{% url 'navi' %}">
+                        <li style="width: 60pt" class="btn btn-clear-g" value="">返回</li>
+                    </a><br>
+                </form>
+            </div>
+            <h4>{{ tips }}</h4>
+            <!-- /.box-body -->
+            <div class="box-footer">
+                <br>
+                <i class="fa fa-info-circle"></i> 请勿重复添加条目
+            </div>
+            <!-- /.box-footer-->
+        </div>
+        <!-- /.box -->
+
+    </section>
+{% endblock %}
+<!--main content end-->

@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block log %}{{ title }}{% endblock %}
+
+{% block aside %}
+        <aside>
+        <div id="sidebar" class="nav-collapse ">
+            <!-- sidebar menu start-->
+            <ul class="sidebar-menu" id="nav-accordion">
+                <p class="centered"><a href="/navi/"><img src="/static/img/ny.jpg" class="img-circle" width="100"></a>
+                </p>
+                <h5 class="centered">{{ username }},welcome</h5>
+
+
+                <li class="sub-menu">
+                    <a class="active" href="{% url "ops:service" %}">
+                        <i class="fa fa-desktop"></i>
+                        <span>Operations</span>
+                    </a>
+{#                    <ul class="sub">#}
+{#                        <li><a href="/ops/index">Service List</a></li>#}
+{#                        <li><a href="/ops/add">Service Add</a></li>#}
+{#                        <li><a href="/ops/hosts">Host List</a></li>#}
+{#                        <li><a href="/ops/hosts_add">Host Add</a></li>#}
+{#                    </ul>#}
+                </li>
+
+            </ul>
+            <!-- sidebar menu end-->
+        </div>
+    </aside>
+{% endblock %}
+<!-- **********************************************************************************************************************************************************
+    MAIN CONTENT
+    *********************************************************************************************************************************************************** -->
+<!--main content start-->
+{% block mainbody %}
+    <section class="wrapper site-min-height">
+ {% for host in ops_servers %}
+        <div class="row mt">
+            <div class="box">
+                <div class="box-body">
+                  <table class="table table-striped table-bordered" id="product_project_table">
+                      <thead>
+                        <tr>
+                            <th>项目</th>
+                            <th>数值</th>
+                        </tr>
+                      </thead>
+                            <tbody>
+                                <tr  class="text-danger">
+                                    <td>系统名称(简)</td>
+                                    <td>{{ host.name }}</td>
+                                </tr>
+                                <tr class="even gradeX">
+                                    <td>系统层级</td>
+                                    <td>{{ host.lever }}</td>
+                                </tr>
+                                 <tr class="even gradeX">
+                                    <td>系统编号</td>
+                                    <td>{{ host.number }}</td>
+                                </tr>
+                                <tr class="even gradeX">
+                                    <td>系统全称</td>
+                                    <td>{{ host.full_name }}</td>
+                                </tr>
+                                <tr class="even gradeX">
+                                    <td>英文缩写</td>
+                                    <td>{{ host.en_name }}</td>
+                                </tr>
+                                <tr class="even gradeX">
+                                    <td>所属平台</td>
+                                    <td>{{ host.platform }}</td>
+                                </tr>
+                                <tr class="even gradeX">
+                                <td>级别(旧)</td>
+                                <td>
+                                    {{ host.old_lever }}
+                                </td>
+                                </tr>
+                                <tr class="even gradeX">
+                                    <td>所属部门</td>
+                                    <td>{{ host.get_department_display }}</td>
+                                </tr>
+                                <tr class="even gradeX">
+                                    <td>重要级别</td>
+                                    <td>{{ host.new_lever }}</td>
+                                </tr>
+                                <tr class="text-danger">
+                                    <td>使用状态</td>
+                                    <td>{{ host.get_status_display }}</td>
+                                </tr>
+                                <tr class="even gradeX">
+                                    <td>开发负责人</td>
+                                    <td>{{ host.dev_manager }}</td>
+                                </tr>
+                                <tr class="even gradeX">
+                                    <td>运营负责人</td>
+                                    <td>{{ host.manager }}</td>
+                                </tr>
+                                <tr class="even gradeX">
+                                    <td>业务负责人</td>
+                                    <td>{{ host.sale_manager }}</td>
+                                </tr>
+                                <tr class="even gradeX">
+                                    <td>开发商</td>
+                                    <td>{{ host.vendor }}</td>
+                                </tr>
+                                <tr class="even gradeX">
+                                    <td>开发商联系人</td>
+                                    <td>{{ host.vendor_person }}</td>
+                                </tr>
+                             <tr class="even gradeX">
+                                    <td>开发商电话</td>
+                                    <td>{{ host.vendor_phone }}</td>
+                                </tr>
+                            </tbody>
+                  </table>
+                </div>
+        </div>
+            <!-- /col-md-12 -->
+        </div>
+{% endfor %}
+    </section>
+{% endblock %}
+<!--main content end-->

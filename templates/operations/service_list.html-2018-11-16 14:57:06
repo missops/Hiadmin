@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+
+{% block log %}{{ title }}{% endblock %}
+
+{% block aside %}
+        <aside>
+        <div id="sidebar" class="nav-collapse ">
+            <!-- sidebar menu start-->
+            <ul class="sidebar-menu" id="nav-accordion">
+                <p class="centered"><a href="/navi/"><img src="/static/img/ny.jpg" class="img-circle" width="100"></a>
+                </p>
+                <h5 class="centered">{{ username }},welcome</h5>
+                <li class="mt">
+                    <a class="" href="/navi/index/">
+                        <i class="fa fa-dashboard"></i>
+                        <span>Navigation</span>
+                    </a>
+                </li>
+
+                <li class="sub-menu">
+                    <a class="active" href="{% url "ops:service" %}">
+                        <i class="fa fa-desktop"></i>
+                        <span>Operations</span>
+                    </a>
+{#                    <ul class="sub">#}
+{#                        <li><a href="/ops/index">Service List</a></li>#}
+{#                        <li><a href="/ops/add">Service Add</a></li>#}
+{#                        <li><a href="/ops/hosts">Host List</a></li>#}
+{#                        <li><a href="/ops/hosts_add">Host Add</a></li>#}
+{#                    </ul>#}
+                </li>
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-th"></i>
+                        <span>Issues</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a href="general.html">系统管理</a></li>
+                        <li><a href="buttons.html">应用管理</a></li>
+                        <li><a href="panels.html">发布管理</a></li>
+                        <li><a href="font_awesome.html">其他管理</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-book"></i>
+                        <span>Logs</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a href="blank.html">Blank Page</a></li>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="lock_screen.html">Lock Screen</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="invoice.html">Invoice</a></li>
+                        <li><a href="pricing_table.html">Pricing Table</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="404.html">404 Error</a></li>
+                        <li><a href="500.html">500 Error</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-tasks"></i>
+                        <span>User</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a href="form_component.html">Form Components</a></li>
+                        <li><a href="advanced_form_components.html">Advanced Components</a></li>
+                        <li><a href="form_validation.html">Form Validation</a></li>
+                        <li><a href="contactform.html">Contact Form</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-cogs"></i>
+                        <span>Setting</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a href="basic_table.html">Basic Table</a></li>
+                        <li><a href="responsive_table.html">Responsive Table</a></li>
+                        <li><a href="advanced_table.html">Advanced Table</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- sidebar menu end-->
+        </div>
+    </aside>
+{% endblock %}
+<!-- **********************************************************************************************************************************************************
+    MAIN CONTENT
+    *********************************************************************************************************************************************************** -->
+<!--main content start-->
+{% block mainbody %}
+    <section class="wrapper site-min-height">
+
+        <div class="row mt">
+            <div class="col-md-12">
+                <div class="content-panel">
+                    <table class="table table-striped table-advance table-hover">
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
+                                    title="Collapse">
+                                <i class="fa fa-minus"></i></button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip"
+                                    title="Remove">
+                                <i class="fa fa-times"></i></button>
+                        </div>
+                        <h4><i class="fa fa-angle-right"></i>Service Table</h4>
+                        <hr>
+                        <thead>
+                        <tr>
+                            <th><i class="fa fa-bullhorn"></i>系统名称</th>
+                            <th><i class=" fa fa-edit"></i>级别</th>
+                            <th><i class=" fa fa-edit"></i>所属部门</th>
+                            <th><i class=" fa fa-edit"></i>运营负责人</th>
+                            <th class="hidden-phone"><i class="fa fa-question-circle"></i> 开发负责人</th>
+
+                            <th><i class=" fa fa-edit"></i>状态</th>
+                            <th><i class=" fa fa-edit"></i>查看更多</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        {% for s in ops_servers %}
+                        <tbody>
+                            <tr>
+{#                                <td><a href="{% url "ops:hosts_id" s.id %}">{{ s.name }}</a></td>#}
+                                <td><a>{{ s.name }}</a></td>
+                                <td class="hidden-phone">{{ s.lever }}</td>
+                                <td class="hidden-phone">{{ s.get_department_display }}</td>
+                                <td class="hidden-phone">{{ s.manager }}</td>
+
+                                <td class="hidden-phone">{{ s.manager }}</td>
+                                <td><span class="label label-info label-mini">{{ s.get_status_display }}</span></td>
+                                <td>
+                                    <a href="{% url "ops:service_more" s.id %}">查看更多</a>
+{#                                    <button href="{% url "ops:service_more" s.id %}" class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>#}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /content-panel -->
+            </div>
+            <!-- /col-md-12 -->
+        </div>
+
+    </section>
+{% endblock %}
+<!--main content end-->

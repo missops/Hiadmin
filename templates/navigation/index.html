@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block log %}{{ title }}{% endblock %}
+{% block username %}{{ username }}{% endblock %}
+
+<!-- **********************************************************************************************************************************************************
+    MAIN CONTENT
+    *********************************************************************************************************************************************************** -->
+<!--main content start-->
+{% block mainbody %}
+    <section class="wrapper site-min-height">
+
+        <div class="row mt mb">
+            <div class="col-lg-12">
+
+                <a href="{% url 'navi_add' %}"><span class="btn btn-file"><b>添加一个导航</b> <i class="fa fa-plus"></i></span></a>
+                <br>
+                <br>
+
+                {% for navi in allnavi %}
+{#                    <ul class="nav nav-pills nav-stacked mail-nav">#}
+{#                        <li class="active"><a href="{{ navi.url }}"> <i class="fa fa-inbox"></i> {{ navi.name }} </a></li>#}
+{#                    </ul>#}
+                    <div class="fontawesome-list row">
+                        <div class="fa-hover col-md-3 col-sm-4">
+                            <a href="{{ navi.url }}" target="_blank"><i class="fa fa-adjust"></i> {{ navi.name }}</a>
+                        </div>
+
+                    </div>
+{#                <div class="col-lg-2 col-md-2 col-sm-4">#}
+{#                    <div class="dmbox" href="{{ navi.url }}" target="_blank">#}
+{#                        <div class="service-icon">#}
+{#                            <a class="" href="{{ navi.url }}" target="_blank"><i class="dm-icon fa fa-heart-o fa-2x"></i></a>#}
+{#                        </div>#}
+{#                        <h4>{{ navi.name }}</h4>#}
+{#                        <p>{{ navi.description }}</p>#}
+{#                    </div>#}
+{#                </div>#}
+                <!-- end dmbox -->
+                {% endfor %}
+            </div>
+            <!--  /col-lg-12 -->
+        </div>
+
+    </section>
+{% endblock %}
+<!--main content end-->
