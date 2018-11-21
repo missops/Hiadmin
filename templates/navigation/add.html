@@ -18,11 +18,11 @@
             </div>
 
             <div class="box-body">
-                <form action="{% url 'navi_add' %}" method="post">
+                <form action="{% url 'navi:navi_add' %}" method="post">
                     {% csrf_token %}
                     {{ n_form.as_p }}
                     <input type="submit" class="btn btn-clear-g" style="width: 60pt" value="提交">&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="{% url 'navi' %}">
+                    <a href="{% url 'navi:navi' %}">
                         <li style="width: 60pt" class="btn btn-clear-g" value="">返回</li>
                     </a><br>
                 </form>

@@ -1,12 +1,16 @@
-{% extends 'base-layer.html' %}
+{% extends 'base.html' %}
 {% load staticfiles %}
 
 {% block css %}
     <link rel="stylesheet" href="{% static 'js/plugins/layer/skin/layer.css' %}">
 {% endblock %}
 
-{% block main %}
-    <div class="box box-danger">
+{% block mainbody %}
+    <section class="wrapper site-min-height">
+
+        <div class="row mt mb">
+
+
         <form class="form-horizontal" id="addForm" method="post">
             {% csrf_token %}
             <div class="box-body">
@@ -54,18 +58,22 @@
             </div>
 
         </form>
-    </div>
+
+        </div>
+
+    </section>
+
 
 {% endblock %}
 
-{% block javascripts %}
+{% block scripts %}
     <script type="text/javascript">
 
         $("#btnSave").click(function () {
             var data = $("#addForm").serialize();
             $.ajax({
                 type: $("#addForm").attr('method'),
-                url: "{% url 'system:basic-structure-create' %}",
+                url: "{% url 'sys:structure_create' %}",
                 data: data,
                 cache: false,
                 success: function (msg) {

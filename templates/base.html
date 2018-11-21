@@ -246,12 +246,12 @@
         <div id="sidebar" class="nav-collapse ">
             <!-- sidebar menu start-->
             <ul class="sidebar-menu" id="nav-accordion">
-                <p class="centered"><a href="{% url "navi" %}"><img src="/media/{{ request.user.image }}" class="img-circle" width="100"></a>
+                <p class="centered"><a href="{% url "navi:navi" %}"><img src="/media/{{ request.user.image }}" class="img-circle" width="100"></a>
                 </p>
                 <h5 class="centered">{% block username %}{% endblock %},welcome</h5>
 
                 <li class="mt">
-                    <a class="" href="/navi/index/">
+                    <a class="" href="{% url "navi:navi" %}">
                         <i class="fa fa-dashboard"></i>
                         <span>Navigation</span>
                     </a>
@@ -312,12 +312,11 @@
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-cogs"></i>
-                        <span>Setting</span>
+                        <span>System</span>
                     </a>
                     <ul class="sub">
-                        <li><a href="basic_table.html">Basic Table</a></li>
-                        <li><a href="responsive_table.html">Responsive Table</a></li>
-                        <li><a href="advanced_table.html">Advanced Table</a></li>
+                        <li><a href="{% url "sys:system" %}">Basic list</a></li>
+                        <li><a href="{% url "sys:structure" %}">structure</a></li>
                     </ul>
                 </li>
             </ul>

@@ -1,13 +1,18 @@
-from django.shortcuts import render
-from django.views.generic.base import View
+import json
+
+from django.shortcuts import render, HttpResponse
+from django.views.generic.base import View, TemplateView
 from django.http import HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse
 from django.contrib.auth import get_user_model
 from django.contrib.auth.backends import ModelBackend
 from django.db.models import Q
+
 from .forms import LoginForm
 from .mixin import LoginRequiredMixin
+
+User = get_user_model()
 
 
 class IndexView(LoginRequiredMixin, View):
@@ -57,8 +62,6 @@ class LogoutView(View):
         return HttpResponseRedirect(reverse("sys:login"))
 
 
-User = get_user_model()
-
 class UserBackend(ModelBackend):
 
     def authenticate(self, request, username=None, password=None, **kwargs):
@@ -68,3 +71,14 @@ class UserBackend(ModelBackend):
                 return user
         except Exception as e:
             return None
+
+
+class UserView(LoginRequiredMixin, TemplateView):
+    template_name = 'system/users/user.html'
+
+
+class UserListView(LoginRequiredMixin, View):
+    def get(self, request):
+        fields = ['id', 'name', 'gender', 'mobile', 'email', 'department__name', 'post', 'superior__name', 'is_active']
+        ret = dict(data=list(User.objects.values(*fields)))
+        return HttpResponse(json.dumps(ret), content_type='application/json')
