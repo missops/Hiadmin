@@ -1,22 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="12542497-d07b-45d1-b2ab-e0fb32ae461e" name="Default Changelist" comment="">
+    <list default="true" id="12542497-d07b-45d1-b2ab-e0fb32ae461e" name="Default Changelist" comment="2018-11-23 11:18:00">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hiadmin/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hiadmin/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/navigation/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/navigation/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/operations/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/operations/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/views_structure.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/views_structure.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/views_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/system/views_user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/navigation/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navigation/add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/navigation/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navigation/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/system/structure/structure.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/system/structure/structure.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/system/structure/structure_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/system/structure/structure_create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/system/structure/structure_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/system/structure/structure_user.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,60 +24,39 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="conf" value="1" />
-          <entry key="html" value="18" />
+          <entry key="css" value="1" />
+          <entry key="html" value="24" />
           <entry key="jpg" value="1" />
-          <entry key="py" value="22" />
+          <entry key="py" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="18" />
+          <entry key="CSS" value="1" />
+          <entry key="HTML" value="24" />
           <entry key="Image" value="1" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="22" />
+          <entry key="Python" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="139" />
-          <entry key="py" value="419" />
+          <entry key="html" value="598" />
+          <entry key="py" value="507" />
+          <entry key="txt" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="139" />
-          <entry key="Python" value="419" />
+          <entry key="HTML" value="598" />
+          <entry key="PLAIN_TEXT" value="24" />
+          <entry key="Python" value="507" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/system/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/system/views_user.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-478">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -118,10 +83,14 @@
         <option value="$PROJECT_DIR$/system/views_structure.py" />
         <option value="$PROJECT_DIR$/templates/system/structure/structure_user.html" />
         <option value="$PROJECT_DIR$/templates/system/structure/structure.html" />
-        <option value="$PROJECT_DIR$/system/views_user.py" />
-        <option value="$PROJECT_DIR$/system/urls.py" />
+        <option value="$PROJECT_DIR$/templates/dailyreport/report.html" />
+        <option value="$PROJECT_DIR$/templates/base_layer.html" />
+        <option value="$PROJECT_DIR$/templates/system/users/user_create.html" />
         <option value="$PROJECT_DIR$/templates/system/users/user.html" />
         <option value="$PROJECT_DIR$/system/forms.py" />
+        <option value="$PROJECT_DIR$/system/views_user.py" />
+        <option value="$PROJECT_DIR$/system/urls.py" />
+        <option value="$PROJECT_DIR$/templates/system/users/user_detail.html" />
       </list>
     </option>
   </component>
@@ -132,8 +101,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="y" value="23" />
     <option name="width" value="1680" />
-    <option name="height" value="1050" />
+    <option name="height" value="948" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -155,31 +125,6 @@
               <item name="Hiadmin" type="b2602c69:ProjectViewProjectNode" />
               <item name="Hiadmin" type="462c0819:PsiDirectoryNode" />
               <item name="system" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Hiadmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Hiadmin" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Hiadmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Hiadmin" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="system" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Hiadmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Hiadmin" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="system" type="462c0819:PsiDirectoryNode" />
-              <item name="structure" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Hiadmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Hiadmin" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="system" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -248,11 +193,18 @@
       <option name="presentableId" value="Default" />
       <updated>1542684284011</updated>
     </task>
+    <task id="LOCAL-00001" summary="2018-11-23 11:18:00">
+      <created>1542943093368</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1542943093368</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23137973" />
@@ -261,7 +213,7 @@
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" weight="0.2489796" />
       <window_info anchor="bottom" id="Python Console" sideWeight="0.4993895" weight="0.32959184" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.2887755" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.26836735" />
       <window_info anchor="bottom" id="Event Log" sideWeight="0.50061053" side_tool="true" weight="0.32959184" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -282,6 +234,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="2018-11-23 11:18:00" />
+    <option name="LAST_COMMIT_MESSAGE" value="2018-11-23 11:18:00" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -387,16 +343,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/system/structure/structure_user.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="67" column="8" selection-start-line="67" selection-start-column="8" selection-end-line="67" selection-end-column="8" />
-          <folding>
-            <element signature="n#block#1;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/system/users/user-base.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -428,16 +374,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/system/users/user.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="n#style#0;n#option#0;n#select#0;n#div#0;n#form#0;n#div#7;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="591">
@@ -445,33 +381,79 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/dailyreport/report.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/plugins/layer/skin/layer.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/system/users/user_create.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2175">
+          <caret line="145" lean-forward="true" selection-start-line="145" selection-end-line="145" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/system/users/user_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2655">
+          <caret line="177" column="20" lean-forward="true" selection-start-line="177" selection-start-column="20" selection-end-line="177" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/system/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="69" selection-start-line="20" selection-start-column="69" selection-end-line="20" selection-end-column="69" />
+        <state relative-caret-position="375">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/system/forms.py">
+    <entry file="file://$PROJECT_DIR$/templates/base_layer.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="570">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/system/users/user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="186" column="29" lean-forward="true" selection-start-line="186" selection-start-column="29" selection-end-line="186" selection-end-column="29" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="n#block#3;n#!!top" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/system/views_user.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-478">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="-1528">
+          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="90" column="9" lean-forward="true" selection-start-line="90" selection-start-column="9" selection-end-line="90" selection-end-column="9" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#511#2464#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/system/structure/structure_user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="26" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
         </state>
       </provider>
     </entry>
