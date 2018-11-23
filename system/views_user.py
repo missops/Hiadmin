@@ -136,6 +136,7 @@ class UserDetailView(LoginRequiredMixin, View):
         }
         return render(request, 'system/users/user_detail.html', ret)
 
+
 class UserUpdateView(LoginRequiredMixin, View):
 
     def post(self, request):
@@ -150,3 +151,74 @@ class UserUpdateView(LoginRequiredMixin, View):
         else:
             ret = {"status": "fail", "message": user_update_form.errors}
         return HttpResponse(json.dumps(ret), content_type="application/json")
+
+
+class PasswordChangeView(LoginRequiredMixin, View):
+
+    def get(self, request):
+        ret = dict()
+        if 'id' in request.GET and request.GET['id']:
+            user = get_object_or_404(User, pk=int(request.GET.get('id')))
+            ret['user'] = user
+        return render(request, 'system/users/passwd_change.html', ret)
+
+    def post(self, request):
+        if 'id' in request.POST and request.POST['id']:
+            user = get_object_or_404(User, pk=int(request.POST['id']))
+            form = PasswordChangeForm(request.POST)
+            if form.is_valid():
+                new_password = request.POST['password']
+                user.set_password(new_password)
+                user.save()
+                ret = {'status': 'success'}
+            else:
+                pattern = '<li>.*?<ul class=.*?><li>(.*?)</li>'
+                errors = str(form.errors)
+                password_change_form_errors = re.findall(pattern, errors)
+                ret = {
+                    'status': 'fail',
+                    'password_change_form_errors': password_change_form_errors[0]
+                }
+        return HttpResponse(json.dumps(ret), content_type='application/json')
+
+
+class UserDeleteView(LoginRequiredMixin, View):
+    """
+    删除数据：支持删除单条记录和批量删除
+    """
+
+    def post(self, request):
+        ret = dict(result=False)
+        if 'id' in request.POST and request.POST['id']:
+            id_list = map(int, request.POST['id'].split(','))
+            User.objects.filter(id__in=id_list).delete()
+            ret['result'] = True
+        return HttpResponse(json.dumps(ret), content_type='application/json')
+
+
+class UserEnableView(LoginRequiredMixin, View):
+    """
+    启用用户：单个或批量启用
+    """
+
+    def post(self, request):
+        if 'id' in request.POST and request.POST['id']:
+            id_nums = request.POST.get('id')
+            queryset = User.objects.extra(where=["id IN(" + id_nums + ")"])
+            queryset.filter(is_active=False).update(is_active=True)
+            ret = {'result': 'True'}
+        return HttpResponse(json.dumps(ret), content_type='application/json')
+
+
+class UserDisableView(LoginRequiredMixin, View):
+    """
+   禁用用户：单个或批量禁用
+    """
+
+    def post(self, request):
+        if 'id' in request.POST and request.POST['id']:
+            id_nums = request.POST.get('id')
+            queryset = User.objects.extra(where=["id IN(" + id_nums + ")"])
+            queryset.filter(is_active=True).update(is_active=False)
+            ret = {'result': 'True'}
+        return HttpResponse(json.dumps(ret), content_type='application/json')

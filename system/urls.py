@@ -22,4 +22,9 @@ urlpatterns = [
     path('user/create/', views_user.UserCreateView.as_view(), name='user_create'),
     path('user/detail/', views_user.UserDetailView.as_view(), name='user_detail'),
     path('user/update/', views_user.UserUpdateView.as_view(), name='user_update'),
+    path('user/delete/', views_user.UserDeleteView.as_view(), name='user_delete'),
+    path('user/enable/', views_user.UserEnableView.as_view(), name='user_enable'),
+    path('user/disable/', views_user.UserDisableView.as_view(), name='user_disable'),
+    path('user/password_change/', views_user.PasswordChangeView.as_view(), name='password_change'),
+
 ]
