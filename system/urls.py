@@ -19,5 +19,7 @@ urlpatterns = [
 
     path('user/', views_user.UserView.as_view(), name='user'),
     path('user/list/', views_user.UserListView.as_view(), name='user_list'),
-
+    path('user/create/', views_user.UserCreateView.as_view(), name='user_create'),
+    path('user/detail/', views_user.UserDetailView.as_view(), name='user_detail'),
+    path('user/update/', views_user.UserUpdateView.as_view(), name='user_update'),
 ]

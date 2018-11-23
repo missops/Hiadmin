@@ -80,3 +80,12 @@ class UserCreateForm(forms.ModelForm):
 
         if User.objects.filter(email=email).count():
             raise forms.ValidationError('邮箱：{}已存在'.format(email))
+
+
+class UserUpdateForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = [
+            'name', 'gender', 'birthday', 'username', 'mobile', 'email',
+            'department', 'post', 'superior', 'is_active', 'roles'
+        ]
