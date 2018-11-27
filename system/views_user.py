@@ -29,10 +29,10 @@ class LoginView(View):
         if not request.user.is_authenticated:
             return render(request, 'system/users/login.html')
         else:
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect('/navi/index')
 
     def post(self, request):
-        redirect_to = request.GET.get('next', '/sys/index')
+        redirect_to = request.GET.get('next', '/navi/index')
         login_form = LoginForm(request.POST)
         if login_form.is_valid():
             user_name = request.POST.get("username", "")

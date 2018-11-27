@@ -38,7 +38,7 @@
             <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
         </div>
         <!--logo start-->
-        <a href="/navi/index/" class="logo"><b>Hi<span>ADMIN</span></b></a>
+        <a href="{% url "navi:navi" %}" class="logo"><b>Hi<span>ADMIN</span></b></a>
         <!--logo end-->
         <div class="nav notify-row" id="top_menu">
             <!--  notification start -->
@@ -246,7 +246,7 @@
         <div id="sidebar" class="nav-collapse ">
             <!-- sidebar menu start-->
             <ul class="sidebar-menu" id="nav-accordion">
-                <p class="centered"><a href="{% url "navi:navi" %}"><img src="/media/{{ request.user.image }}" class="img-circle" width="100"></a>
+                <p class="centered"><a href="{% url "navi:navi" %}"><img src="/static/img/ny.jpg" class="img-circle" width="100"></a>
                 </p>
                 <h5 class="centered">{% block username %}{% endblock %},welcome</h5>
 
@@ -263,7 +263,7 @@
                     </a>
                 </li>
                 <li class="sub-menu">
-                    <a href="{% url "daily" %}">
+                    <a href="{% url "daily:report" %}">
                         <i class="fa fa-calendar"></i>
                         <span>DailyReport</span>
                     </a>
@@ -271,7 +271,7 @@
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-align-center"></i>
-                        <span>Issues</span>
+                        <span>Devops</span>
                     </a>
                     <ul class="sub">
                         <li><a href="general.html">系统管理</a></li>
@@ -283,30 +283,11 @@
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-book"></i>
-                        <span>Logs</span>
+                        <span>Monit</span>
                     </a>
                     <ul class="sub">
                         <li><a href="blank.html">Blank Page</a></li>
                         <li><a href="login.html">Login</a></li>
-                        <li><a href="lock_screen.html">Lock Screen</a></li>
-                        <li><a href="profile.html">Profile</a></li>
-                        <li><a href="invoice.html">Invoice</a></li>
-                        <li><a href="pricing_table.html">Pricing Table</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="404.html">404 Error</a></li>
-                        <li><a href="500.html">500 Error</a></li>
-                    </ul>
-                </li>
-                <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class="fa fa-tasks"></i>
-                        <span>User</span>
-                    </a>
-                    <ul class="sub">
-                        <li><a href="form_component.html">Form Components</a></li>
-                        <li><a href="advanced_form_components.html">Advanced Components</a></li>
-                        <li><a href="form_validation.html">Form Validation</a></li>
-                        <li><a href="contactform.html">Contact Form</a></li>
                     </ul>
                 </li>
                 <li class="sub-menu">
@@ -315,8 +296,8 @@
                         <span>System</span>
                     </a>
                     <ul class="sub">
-                        <li><a href="{% url "sys:system" %}">Basic list</a></li>
-                        <li><a href="{% url "sys:structure" %}">structure</a></li>
+                        <li><a href="{% url "sys:user" %}">User Manage</a></li>
+                        <li><a href="{% url "sys:structure" %}">Structure Manage</a></li>
                     </ul>
                 </li>
             </ul>

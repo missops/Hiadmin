@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
-{% block log %}{{ title }}{% endblock %}
+{% block title %}{{ title|default:"hiadmin" }}{% endblock %}
 {% block username %}{{ username }}{% endblock %}
 {% block css %}
     <link rel="stylesheet" href="{% static 'js/plugins/layer/skin/layer.css' %}">

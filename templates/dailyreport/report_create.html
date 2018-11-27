@@ -1,4 +1,3 @@
-{% extends 'base.html' %}
 {% load staticfiles %}
 
 {% block css %}
@@ -28,7 +27,7 @@
                         <select class="form-control select2" multiple="multiple" name="attention" data-placeholder="添加关注"
                                 style="width: 100%;">
                             {% for attention in user_all %}
-                            <option value="{{ attention.id }}"></option>
+                            <option value="{{ attention.id }}">{{ attention.name }}</option>
                             {% endfor %}
                         </select>
                     </div>
@@ -76,7 +75,7 @@
             var data = $("#addForm").serialize();
             $.ajax({
                 type: $("#addForm").attr('method'),
-                url: "{% url 'myreport-create' %}",
+                url: "{% url 'daily:report_create' %}",
                 data: data,
                 cache: false,
                 success: function (msg) {
@@ -123,3 +122,4 @@
     </script>
 
 {% endblock %}
+
