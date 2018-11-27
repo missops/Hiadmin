@@ -6,8 +6,6 @@ from Hiadmin.settings import MEDIA_ROOT
 
 app_name = 'sys'
 urlpatterns = [
-    path('', views.SystemView.as_view(), name='system'),
-
     path('login/', views_user.LoginView.as_view(), name='login'),
     path('logout/', views_user.LogoutView.as_view(), name='logout'),
     re_path(r'media/(?P<path>.*)', serve, {"document_root": MEDIA_ROOT}),

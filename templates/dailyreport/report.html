@@ -100,16 +100,46 @@
                 },
                 //设置是否显示周六和周日，设为false则不显示
                 weekends: true,
+                dayClick: function (date, view) {
+                    layer.open({
+                        type: 2,
+                        title: '新建日报',
+                        shadeClose: false,
+                        maxmin: true,
+                        area: ['800px', '500px'],
+                        content: "/daily/create?calDate=" + date.format("YYYY-MM-DD H:mm"),
+                    });
+                },
+                eventClick: function (calEvent, jsEvent, view) {
+                    layer.open({
+                        type: 2,
+                        title: '日报详情',
+                        shadeClose: false,
+                        maxmin: true,
+                        area: ['800px', '460px'],
+                        content: "/daily/detail?id=" + calEvent.id,
+
+                    });
+                },
                 events: [
-                    {
-                        title: '测试用的日程数据',
-                        start: '2018-11-28'
-                    },
-                    {
-                        title: '新的工作计划',
-                        start: '2018-11-15'
-                    },
-                ]
+                    {% for my_report in my_report_all %}
+                        {
+                            id: '{{ my_report.id }}',
+                            title: '{{ my_report.content }}',
+                            start: '{{ my_report.start_time | date:"Y-m-d H:i"}}',
+                            end: '{{ my_report.end_time | date:"Y-m-d H:i"}}',
+                            {% if my_report.category == '0'  %}
+                                backgroundColor: '#0073b7',
+                            {% elif my_report.category == '1' %}
+                                backgroundColor: '#00a65a',
+                            {% else %}
+                                backgroundColor: '#dd4b39',
+                            {% endif %}
+
+                        },
+                    {% endfor %}
+
+                ],
             });
         });
 
