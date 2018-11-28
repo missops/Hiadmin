@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
-{% block title %}{{ title }}{% endblock %}
+{% block title %}{{ title|default:"Report" }}{% endblock %}
 {% block username %}{{ username|default:'Hi' }}{% endblock %}
 
 {% block css %}
