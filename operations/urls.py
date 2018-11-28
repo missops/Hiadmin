@@ -3,7 +3,7 @@ from operations import views
 
 app_name = 'ops'
 urlpatterns = [
-    path('service/', views.ops_server, name='service'),
-    re_path('service/(\d+)/', views.ops_server_more, name='service_more'),
-    re_path('hosts/(\d+)/', views.ops_hosts, name='hosts_id')
+    path('service/', views.MyOpsView.as_view(), name='service'),
+    re_path('service/(\d+)/', views.OpsDetailView.as_view(), name='service_more'),
+    re_path('hosts/(\d+)/', views.MyHostsView.as_view(), name='hosts_id')
 ]

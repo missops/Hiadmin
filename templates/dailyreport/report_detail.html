@@ -33,7 +33,7 @@
                 <input type="hidden" name="user" value="{{ request.user.id }}">
                 <input type="hidden" name="id" value="{{ report.id }}">
                 <div class="form-group has-feedback">
-                    <label class="col-sm-2 control-label">日报类型</label>
+                    <label class="col-sm-2 control-label">事件类型</label>
                     <div class="col-sm-3">
                         <select class="form-control select2" style="width:100%;" name="category">
                             <option value="{{ report.category }}">{{ report.get_category_display }}</option>
@@ -42,7 +42,7 @@
                             {% endfor %}
                         </select>
                     </div>
-                    <label class="col-sm-2 control-label">添加关注</label>
+                    <label class="col-sm-2 control-label">事件人员</label>
                     <div class="col-sm-3">
                         <select class="form-control select2" multiple="multiple" name="attention"
                                 data-placeholder="添加关注"

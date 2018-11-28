@@ -13,21 +13,35 @@ from .forms import DailyReportForm
 User = get_user_model()
 
 
-class DailyReportView(LoginRequiredMixin, View):
-
+class MyReportView(View):
+    """
+    大家都可以查看，不需要权限
+    """
     def get(self, request):
         ret = dict()
-        my_report_all = DailyReport.objects.filter(user=int(request.user.id))
+        my_report_all = DailyReport.objects.all()
+        ret['my_report_all'] = my_report_all
+        return render(request, 'dailyreport/myreport.html', ret)
+
+class DailyReportView(LoginRequiredMixin, View):
+    """
+    事件详情
+    """
+    def get(self, request):
+        ret = dict()
+        my_report_all = DailyReport.objects.filter(attention=int(request.user.id))
         ret['my_report_all'] = my_report_all
         return render(request, 'dailyreport/report.html', ret)
 
 
 class ReportCreateView(LoginRequiredMixin, View):
-
+    """
+    事件添加
+    """
     def get(self, request):
         ret = dict()
         category_all = [{'key': i[0], 'value': i[1]} for i in DailyReport.CAT_CHOICE]
-        user_all = User.objects.exclude(username__in=['admin', request.user.username])
+        user_all = User.objects.exclude(username__in=['admin'])
         ret['category_all'] = category_all
         ret['user_all'] = user_all
 
@@ -50,7 +64,7 @@ class ReportCreateView(LoginRequiredMixin, View):
         return HttpResponse(json.dumps(res), content_type='application/json')
 
 
-class ReportDetailView(LoginRequiredMixin, View):
+class ReportDetailView( View):
     """
     日报详情：用于日历展示日报详情和修改日报内容
     """
