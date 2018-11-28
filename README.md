@@ -1,4 +1,4 @@
 # Hiadmin
 
-By xxr ：
-2018年11月26日14:18:54
+[https://zhuanlan.zhihu.com/sandbox]
+主要对照此专栏开发，在此致谢。
