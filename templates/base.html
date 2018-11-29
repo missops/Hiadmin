@@ -248,7 +248,7 @@
             <ul class="sidebar-menu" id="nav-accordion">
                 <p class="centered"><a href="{% url "navi:navi" %}"><img src="/static/img/ny.jpg" class="img-circle" width="100"></a>
                 </p>
-                <h5 class="centered">{% block username %}{% endblock %},welcome</h5>
+                <h5 class="centered">welcome,{{ request.session.username }}</h5>
 
                 <li class="mt">
                     <a class="" href="{% url "navi:navi" %}">

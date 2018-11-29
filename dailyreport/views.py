@@ -25,7 +25,7 @@ class MyReportView(View):
 
 class DailyReportView(LoginRequiredMixin, View):
     """
-    事件详情
+    事件首页
     """
     def get(self, request):
         ret = dict()

@@ -42,6 +42,8 @@ class LoginView(View):
             if user is not None:
                 if user.is_active:
                     login(request, user)
+                    request.session['username'] = user_name
+                    request.session.set_expiry(600)
                     return HttpResponseRedirect(redirect_to)
                 else:
                     msg = "用户未激活！"
